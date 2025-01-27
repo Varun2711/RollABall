@@ -132,6 +132,7 @@ GameObject:
   - component: {fileID: 12569010}
   - component: {fileID: 12569009}
   - component: {fileID: 12569013}
+  - component: {fileID: 12569014}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -255,6 +256,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &12569014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 12569008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9afd2a5bfe9bed4a983c0a6e077d959, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sphereRigidbody: {fileID: 12569013}
+  ballSpeed: 2
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0

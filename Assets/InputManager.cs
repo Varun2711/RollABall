@@ -1,15 +1,9 @@
 using UnityEngine;
-
-public class BallBehaviour : MonoBehaviour
+using UnityEngine.Events;
+public class InputManager : MonoBehaviour
 {
-    [SerializeField] private Rigidbody sphereRigidbody;
-    [SerializeField] private float ballSpeed = 2.0f;
 
-    public void MoveBall(Vector2 input)
-    {
-        Vector3 inputXZPlane = new(input.x, 0, input.y);
-        sphereRigidbody.AddForce(inputXZPlane * ballSpeed);
-    }
+    public UnityEvent<Vector2> OnMove = new UnityEvent<Vector2>();
 
     // Update is called once per frame
     void Update()
@@ -35,9 +29,6 @@ public class BallBehaviour : MonoBehaviour
             inputVector += Vector2.left;
         }
 
-        Debug.Log("Resultant Vector: " + inputVector);
-
-        Vector3 inputXZPlane = new(inputVector.x, 0, inputVector.y);
-        sphereRigidbody.AddForce(inputXZPlane * ballSpeed);
+        OnMove?.Invoke(inputVector);
     }
 }
